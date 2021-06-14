@@ -83,6 +83,12 @@ class Message < ApplicationRecord
 end
 ```
 
+or add rich text field while creating a new model using:
+
+```
+bin/rails generate model Message content:rich_text
+```
+
 **Note:** you don't need to add a `content` field to your `messages` table.
 
 Then use [`rich_text_area`] to refer to this field in the form for the model:
@@ -120,7 +126,7 @@ end
 
 Action Text will sanitize and render rich content on your behalf.
 
-By default, the Action Text editor and content is styled by the Trix defaults.
+By default, the Action Text editor and content are styled by the Trix defaults.
 
 If you want to change these defaults, remove the `// require "actiontext.scss"`
 line from your `application.scss` to omit the [contents of that
